@@ -3,6 +3,6 @@ names(data)<-c("Date","Time","Global_active_power","Global_reactive_power", "Vol
 realdata <- subset(data, Date=="1/2/2007"| Date =="2/2/2007")
 datetime <- strptime(paste(realdata$Date, realdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 GAP <- as.numeric(realdata$Global_active_power)
-plot(datetime, GAP,type="l",xlab="",ylab="Global Active Power")
+plot(datetime, GAP,type="l",xlab="",ylab="Global Active Power (kilowatts)")
 dev.copy(png,filename="plot2.png",width=480,height=480,units="px")
 dev.off()
